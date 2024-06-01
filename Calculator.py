@@ -1,6 +1,6 @@
 import math
 
-def single_number_operations(choice, num):
+def singleNumOperate(choice, num):
     if choice == '1':
         return math.sqrt(num)
     elif choice == '2':
@@ -14,7 +14,7 @@ def single_number_operations(choice, num):
     else:
         return "Invalid choice"
 
-def two_number_operations(choice, num1, num2):
+def multipleNumOperate(choice, num1, num2):
     if choice == '1':
         return num1 + num2
     elif choice == '2':
@@ -30,9 +30,9 @@ def two_number_operations(choice, num1, num2):
         return "Invalid choice"
 
 def main():
-    char_count = int(input("Enter the number of characters (1 for single number operations, 2 for two number operations): "))
+    insert = int(input("Enter the number of characters (1 for single number operations, 2 for multiple number operations): "))
 
-    if char_count == 1:
+    if insert == 1:
         print("Choose an operation:")
         print("1: Square Root")
         print("2: Square")
@@ -40,22 +40,22 @@ def main():
         print("4: Cosine")
         print("5: Tangent")
 
-        choice = input("Enter choice(1/2/3/4/5): ")
+        choice = input("Enter choice: ")
         num = float(input("Enter the number: "))
-        result = single_number_operations(choice, num)
+        result = singleNumOperate(choice, num)
         print(f"Result: {result}")
 
-    elif char_count == 2:
+    elif insert == 2:
         print("Choose an operation:")
         print("1: Addition")
         print("2: Subtraction")
         print("3: Multiplication")
         print("4: Division")
 
-        choice = input("Enter choice(1/2/3/4): ")
+        choice = input("Enter choice: ")
         num1 = float(input("Enter the first number: "))
         num2 = float(input("Enter the second number: "))
-        result = two_number_operations(choice, num1, num2)
+        result = multipleNumOperate(choice, num1, num2)
         print(f"Result: {result}")
 
     else:
